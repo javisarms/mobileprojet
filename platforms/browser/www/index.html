@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Val'Acro</title>
+	<link rel="stylesheet" href="styles/onsen/css/onsenui.css">
+  	<link rel="stylesheet" href="styles/onsen/css/onsen-css-components.min.css">
+  	<link rel="stylesheet" href="styles/styles.css">
+  	<script src="styles/onsen/js/onsenui.min.js"></script>
+</head>
+<body>
+	<ons-splitter>
+	  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+	    <ons-page>
+	    	<div class="sideIm">
+	    		<center>
+	    			<img src="img/valacro_logo.png" style="height: 150px; width: 150px;">
+	    		</center>
+	    	</div>
+	      <ons-list class="bg">
+	        <ons-list-item onclick="fn.load('home.html')" tappable class="itemz">
+	          <i class="fas fa-home"></i>&nbsp;&nbsp;Accueil
+	        </ons-list-item>
+	        <ons-list-item onclick="fn.load('settings.html')" tappable>
+	          <i class="fas fa-user"></i>&nbsp;&nbsp;Mon Profil
+	        </ons-list-item>
+	        <ons-list-item onclick="fn.load('about.html')" tappable style="font-size: 13px;">
+	          <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
+	        </ons-list-item>
+	        <ons-list-item onclick="fn.load('about.html')" tappable>
+	          <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
+	        </ons-list-item>
+	        <div class="bottom"></div>
+	        <ons-list-item onclick="fn.load('about.html')" tappable>
+	          <i class="fas fa-phone"></i>&nbsp;&nbsp;Nous Contacter
+	        </ons-list-item>
+	        <ons-list-item onclick="fn.load('about.html')" tappable>
+	          <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Se Déconnecter
+	        </ons-list-item>
+	      </ons-list>
+	    </ons-page>
+	  </ons-splitter-side>
+	  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+	</ons-splitter>
+
+	<!-- Events Page -->
+	<template id="home.html">
+	  <ons-page>
+	  	<!-- Toolbar -->
+	    <ons-toolbar>
+	      <div class="left">
+	        <ons-toolbar-button onclick="fn.open()">
+	          <ons-icon icon="md-menu" class="iconz"></ons-icon>
+	        </ons-toolbar-button>
+	      </div>
+	      <div class="center">
+	        Liste des évènements
+	      </div>
+	    </ons-toolbar>
+	    <!-- Content -->
+	    <center>
+	    	<!-- Event card div -->
+	    	<div class="baraha">
+	    	  <div class="card">
+	    	  	<center><img class="poster" src="img/poster.jpg"></center>
+	    	    <h2 class="card__title">Event Title | Date </h2>
+	    	    <div class="card__content">Loren ipsum dolor sit amet, consectetur.</div>
+	    	  </div>
+	    	</div>
+
+	    	<div class="baraha">
+	    	  <div class="card">
+	    	  	<center><img class="poster" src="img/poster.jpg"></center>
+	    	    <h2 class="card__title">Event Title | Date </h2>
+	    	    <div class="card__content">Loren ipsum dolor sit amet, consectetur.</div>
+	    	  </div>
+	    	</div>
+	    </center>
+	  </ons-page>
+	</template>
+
+	<!-- Contact page -->
+	<template id="settings.html">
+	  <ons-page>
+	    <ons-toolbar>
+	      <div class="left">
+	        <ons-toolbar-button onclick="fn.open()">
+	          <ons-icon icon="md-menu"></ons-icon>
+	        </ons-toolbar-button>
+	      </div>
+	      <div class="center">
+	        Settings
+	      </div>
+	    </ons-toolbar>
+	  </ons-page>
+	</template>
+
+	<!-- JS Files -->
+	<script src="styles/app.js"></script>
+</body>
+</html>

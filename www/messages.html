@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Messagerie</title>
+	<link rel="stylesheet" href="styles/onsen/css/onsenui.css">
+  	<link rel="stylesheet" href="styles/onsen/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="styles/styles.css">
+  	<script src="styles/onsen/js/onsenui.min.js"></script>
+
+    <!-- Modal -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <!-- Sidebar / Splitter -->
+  	<ons-splitter>
+  	  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+  	    <ons-page>
+  	    	<div class="sideIm">
+  	    		<center>
+  	    			<img src="img/valacro_logo.png" style="height: 150px; width: 150px;">
+  	    		</center>
+  	    	</div>
+  	      <ons-list>
+  	      	<a href="index.html">
+  	      		<ons-list-item tappable>
+  	      		  <i class="fas fa-home"></i>&nbsp;&nbsp;Accueil
+  	      		</ons-list-item>
+  	      	</a> 
+  	        <a href="profil.html">
+  	        	<ons-list-item tappable>
+  	        	  <i class="fas fa-user"></i>&nbsp;&nbsp;Mon Profil
+  	        	</ons-list-item>
+  	        </a>
+  	        <a href="groupes.html">
+  	        	<ons-list-item tappable style="font-size: 13px;">
+  		          <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
+  		        </ons-list-item>
+  	        </a>
+  	        <a href="messages.html">
+  	        	<ons-list-item tappable>
+  		          <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
+  		        </ons-list-item>
+  	        </a>
+  	        
+  	        <div class="bottom"></div>
+  	        <a href="contact.html">
+  	        	<ons-list-item tappable>
+  	        	  <i class="fas fa-phone"></i>&nbsp;&nbsp;Nous Contacter
+  	        	</ons-list-item>
+  	        </a>
+  	        <a href="#.html">
+  	        	<ons-list-item tappable>
+  		          <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Se Déconnecter
+  		        </ons-list-item>
+  	        </a>   
+  	      </ons-list>
+  	    </ons-page>
+  	  </ons-splitter-side>
+  	  <ons-splitter-content id="content" page="main.html">
+  	  </ons-splitter-content>
+  	</ons-splitter>
+  
+
+  <!-- Main Page -->
+  <template id="main.html">
+    <ons-page id="main">
+    	<!-- Toolbar -->
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu" class="iconz"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Messagerie
+        </div>
+      </ons-toolbar>
+
+      <!-- Content -->
+      <center>
+        <br>
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">Choix Du (Des) Destinataire(s)</button>
+       <br><br>
+       <form>
+         <input type="text" class="text-input" name="subject" placeholder="Sujet" style="width: 60%; padding-left: 5px;">
+         <br>
+         <textarea name="message" class="textarea" form="grpmsg" rows="8" cols="50" placeholder="Ecrivez votre message" style="width: 60%;"></textarea>
+         <br><br><br>
+         <button type="submit" class="button button--outline" style="width: 60%;">Envoyer</button>
+       </form>
+      </center>
+    </ons-page>
+  </template>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div style="margin-top: 10px;">
+            <center>
+                <button type="button" class="close" data-dismiss="modal" style="margin-right: 20px;">&times;</button>
+                <h4>Choix des destinataires</h4>
+            </center>
+        </div>
+        <div class="modal-body">
+                <form>
+                    <label class="checkbox">
+                      <input type="checkbox" class="checkbox__input">
+                      <div class="checkbox__checkmark"></div>
+                      Group 1
+                    </label>
+                    <br>
+                    <label class="checkbox">
+                      <input type="checkbox" class="checkbox__input" checked="checked">
+                      <div class="checkbox__checkmark"></div>
+                      Group 2
+                    </label>
+                    <br>
+                    <label class="checkbox">
+                      <input type="checkbox" class="checkbox__input" checked="checked">
+                      <div class="checkbox__checkmark"></div>
+                      Group 3
+                    </label>
+                </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- JS Files -->
+  <script src="styles/app.js"></script>
+</body>
+</html>
