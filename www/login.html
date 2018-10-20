@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Val'Acro Login</title>
+	<link rel="stylesheet" href="styles/onsen/css/onsenui.css">
+	<link rel="stylesheet" href="styles/onsen/css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="styles/onsen/js/onsenui.min.js"></script>
+</head>
+<body>  
+
+  <ons-navigator swipeable id="myNavigator" page="main.html"></ons-navigator>
+
+  <!-- Main Page -->
+  <template id="main.html">
+    <ons-page id="main">
+      <!-- Content -->
+      <div style="background-color: black;">
+        <center>
+          <br>
+          <img src="img/banner.png" style="width: 100%; height: auto;">
+          <br><br>
+        </center>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <p>
+          <ons-input id="email" modifier="underbar" placeholder="Adresse mail" float></ons-input>
+        </p>
+        <p>
+          <ons-input id="password" modifier="underbar" type="Mot de passe" placeholder="Password" float></ons-input>
+        </p>
+        <p style="margin-top: 30px;">
+          <a href="index.html">
+            <ons-button onclick="login()" class="btn btn-dark">Connexion</ons-button>
+          </a>
+        </p>
+        <br>
+        <a onclick="push('forgot.html')" style="color: #555; text-decoration: underline;">Mot de passe oublié</a> <br> <br>
+        <a onclick="push('signup.html')" style="color: #555; text-decoration: underline;">Pas encore incrit?</a>
+      </div>
+    </ons-page>
+  </template>
+
+  <template id="signup.html">
+    <ons-page id="signup">
+      <!-- Toolbar -->
+      <ons-toolbar>
+        <div class="left">
+          <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+        </div>
+      </ons-toolbar>
+      <!-- Content -->
+      <center>
+        <div class="card">
+          <h2>Sign up</h2>
+          <form>
+              <input type="text" name="email" placeholder="Adresse mail" class="input sup"> <br><br>
+              <input type="password" name="passe" placeholder="Mot de passe" class="input sup"> <br><br>
+              <input type="password" name="confirm" placeholder="Confirmez votre mot de passe" class="input sup"> <br><br>
+              <input type="button" name="submit" value="Valider" class="btn btn-dark input">
+          </form>
+        </div>
+      </center>
+    </ons-page>
+  </template>
+
+  <template id="forgot.html">
+    <ons-page id="forgot">
+      <!-- Toolbar -->
+      <ons-toolbar>
+        <div class="left">
+          <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+        </div>
+      </ons-toolbar>
+      <!-- Content -->
+      <div class="card">
+        <h2>Mot de passe oublié</h2>
+        <p>Veuillez entrer votre email pour recevoir les instructions de réinitialisation du mot de passe</p>
+        <form class="form">
+            <input type="text" name="email" placeholder="Adresse mail" class="input sup"> <br><br>
+            <input type="button" name="submit" value="Rénitialiser le mot de passe" class="btn btn-dark input">
+        </form>
+      </div>
+    </ons-page>
+  </template>
+
+  <!-- JS Files -->
+  <script src="styles/app.js"></script>
+</body>
+</html>

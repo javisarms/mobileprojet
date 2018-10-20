@@ -49,7 +49,7 @@
   	        	  <i class="fas fa-phone"></i>&nbsp;&nbsp;Nous Contacter
   	        	</ons-list-item>
   	        </a>
-  	        <a href="#.html">
+  	        <a href="login.html">
   	        	<ons-list-item tappable>
   		          <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Se Déconnecter
   		        </ons-list-item>
@@ -57,10 +57,16 @@
   	      </ons-list>
   	    </ons-page>
   	  </ons-splitter-side>
-  	  <ons-splitter-content id="content" page="main.html">
+  	  <ons-splitter-content id="content" page="home.html">
   	  </ons-splitter-content>
   	</ons-splitter>
   
+  <!-- Navigator (for pushing and popping) -->
+  <ons-template id="home.html">
+    <ons-page id="homePage">
+      <ons-navigator id="myNavigator" page="main.html"></ons-navigator>
+    </ons-page>
+  </ons-template>
 
   <!-- Main Page -->
   <template id="main.html">
@@ -80,7 +86,7 @@
       <!-- Content -->
       <center>
       	<div class="baraha">
-          <div class="card" onclick="fn.load('group.html')">
+          <div class="card" onclick="push('group.html')">
             <h2 class="card__title">Nom de Groupe</h2>
             <div class="card__content">
               <p class="card__txt">Coach: <b>John Doe</b></p>
@@ -89,7 +95,7 @@
           </div>
         </div>
         <div class="baraha">
-          <div class="card" onclick="fn.load('group.html')">
+          <div class="card" onclick="push('group.html')">
             <h2 class="card__title">Nom de Groupe</h2>
             <div class="card__content">
               <p class="card__txt">Coach: <b>John Doe</b></p>
@@ -104,62 +110,78 @@
     <!-- Group page -->
     <template id="group.html">
       <ons-page id="group">
+        <ons-pull-hook id="pull-hook">
+          Pull to refresh
+        </ons-pull-hook>
         <!-- Toolbar -->
         <ons-toolbar>
           <div class="left">
-            <button class="iconz" onclick="fn.load('main.html')"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
-          </div>
-          <div class="center">
-            Group
+            <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
           </div>
         </ons-toolbar>
         <!-- Content -->
         <center>
-          <br>
-          <h3>Coach: Nom Prenom</h3>
-          <p>Planning des entraînements</p>
-          <h5>Jeudi 18h00</h5>
-          <br>
-          <!-- Messages -->
-          <h6>Messages</h6>
-          <div class="list-group" style="width: 80%;">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Message sujet</h5>
-                <small class="text-muted">3 days ago</small>
-              </div>
-              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-              <small class="text-muted">Posted by: John Doe</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Message sujet</h5>
-                <small class="text-muted">4 days ago</small>
-              </div>
-              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-              <small class="text-muted">Posted by: Kylian Mbappe</small>
-            </a>
+          <div class="card">
+            <h4 class="card__title">Nom de Groupe</h4>
+            <div class="line"></div>
+            <br>
+            <div class="card__content">
+              <p class="card__txt">Coach: <b>Nom Prenom</b></p>
+              <p class="card__txt">Planning des entraînements: <b>Jeudi 18h00</b></p>
+            </div>
           </div>
+          <!-- Messages -->
+          <div class="card">
+            <h4 class="card__title">Messages</h4>
+            <div class="card__content">
+              <center>
+                  <div class="list-group" style="width: 100%;">
+                      <div class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Message sujet</h5>
+                          <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <p class="posted">Posted by: John Doe</p>
+                      </div>
+                      <div class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Message sujet</h5>
+                          <small class="text-muted">4 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <p class="posted">Posted by: Kylian Mbappe</p>
+                      </div>
+                    </div>
+                </div>
+              </center>
+          </div>
+          
 
           <!-- Members -->
-          <br>
-          <h6>Membres du groupe</h6>
-              <div class="list-group" style="width: 80%">
-                <a href="page_userInfo.html" class="list-group-item list-group-item-action">
-                  <img src="img/user.png" style="height: 25px; width: 25px;"> Jane Doe
-                </a>
-                <a href="page_userInfo.html" class="list-group-item list-group-item-action">
-                  <img src="img/user.png" style="height: 25px; width: 25px;"> John Doe
-                </a>
-                <a href="page_userInfo.html" class="list-group-item list-group-item-action">
-                  <img src="img/user.png" style="height: 25px; width: 25px;"> Jake Doe
-                </a>
-                <a href="page_userInfo.html" class="list-group-item list-group-item-action">
-                  <img src="img/user.png" style="height: 25px; width: 25px;"> Jasper Doe
-                </a>
-              </div>
-        </center>
-        <br><br><br>
+          <div class="card">
+            <h4 class="card__title">Membres du groupe</h4>
+            <div class="card__content">
+              <center>
+                <div style="text-align: left;">
+                    <div class="list-group" style="width: 100%">
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <img src="img/user.png" style="height: 25px; width: 25px;"> Jane Doe
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <img src="img/user.png" style="height: 25px; width: 25px;"> John Doe
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <img src="img/user.png" style="height: 25px; width: 25px;"> Jake Doe
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <img src="img/user.png" style="height: 25px; width: 25px;"> Jasper Doe
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </center>
+          </div>              
       </ons-page>
     </template>
 

@@ -2,6 +2,11 @@ html {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .sideIm {
 	background-color: black;
 }
@@ -24,6 +29,8 @@ html {
 
 .iconz {
 	color: #f30c1a;
+	border: none;
+	background: none;
 }
 
 .bg {
@@ -62,18 +69,23 @@ html {
 	opacity: 0.6;
 }
 
-a {
+a,
+a:active,
+a:hover {
 	text-decoration: none;
 }
 
-a:active {
-	text-decoration: none;
-}
-
-.button--outline {
+/*.button--outline {
 	border-color: #f30c1a;
-	color: #f30c1a;;
+	color: #f30c1a;
 }
+
+.button--outline:active {
+	border-color: #f30c1a;
+	color: #fff;
+	background-color: #f30c1a;
+	opacity: 0.6;
+}*/
 
 .mb-1 {
 	text-align: left;
@@ -81,4 +93,33 @@ a:active {
 
 .text-muted {
 	text-align: left;
+}
+
+.fom {
+	text-align: center;
+	color: black;
+}
+
+.posted {
+	text-align: left;
+	opacity: .6;
+	font-size: 13px;
+}
+
+.line {
+	border-bottom: 1px solid #cccccc;
+}
+
+.textarea {
+	background-color: white;
+}
+
+.input {
+	width: 100%;
+}
+
+.sup {
+	padding: 5px 20px;
+	border-radius: 5px;
+    border: 1px solid #ccc;
 }
