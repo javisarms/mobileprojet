@@ -95,10 +95,10 @@
             <center>
               <div style="text-align: left;">
                   <div class="list-group" style="width: 100%">
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a onclick="push('member.html')" class="list-group-item list-group-item-action">
                       <img src="img/user.png" style="height: 25px; width: 25px;"> Jane Doe
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a onclick="push('member.html')" class="list-group-item list-group-item-action">
                       <img src="img/user.png" style="height: 25px; width: 25px;"> John Doe
                     </a>
                   </div>
@@ -116,36 +116,68 @@
     </ons-page>
   </template>
 
-    <template id="addEnfant.html">
-      <ons-page id="addEnfant">
-        <!-- Toolbar -->
-        <ons-toolbar>
-          <div class="left">
-            <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+  <!-- Add enfant -->
+  <template id="addEnfant.html">
+    <ons-page id="addEnfant">
+      <!-- Toolbar -->
+      <ons-toolbar>
+        <div class="left">
+          <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+        </div>
+      </ons-toolbar>
+      <!-- Content -->
+      <center>
+        <div class="card">
+          <h4 class="card__title">Formulaire d'inscription</h4>
+          <div class="card__content">
+            <form class="form">
+                <input type="text" name="nom" placeholder="Nom" class="input sup"> <br><br>
+                <input type="text" name="prenom" placeholder="Prenom" class="input sup"> <br><br>
+                <input type="text" name="bday" placeholder="Date de naissance" class="input sup"> <br><br>
+                <div align="justify">
+                  <p class="terms">En acceptant l'inscription, vous: Autorisez les responsables de Val'Acro á faire pratiquer, en cas d'urgence, une intervention médicale ou chirurgicale en cas de nécessité.Autorisez l'adhérent á venir par ses propres moyens sur le lieu d'entraînement ou de compétition et á être transporté en autocar ou, le cas échéant, par les véhicules des accompagnateurs.
+                  </p>
+                  <p style="font-size: 13px; text-align: center;"> <input type="checkbox" name="accept"> Je valide les conditions</p>
+                  <p class="terms">Un certificat médical pourra vous être demandé au cours de l'année</p>
+                  <center><input type="button" name="submit" value="Valider" class="btn btn-dark input"></center>
+                </div>
+            </form>
           </div>
-        </ons-toolbar>
-        <!-- Content -->
+        </div>
+      </center>
+    </ons-page>
+  </template>
+
+  <!-- Individual gymnasts (for each loop) -->
+  <template id="member.html">
+    <ons-page id="member">
+      <!-- Toolbar -->
+      <ons-toolbar>
+        <div class="left">
+          <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+        </div>
+      </ons-toolbar>
+      <!-- Content -->
+      <div class="card">
         <center>
-          <div class="card">
-            <h4 class="card__title">Formulaire d'inscription</h4>
-            <div class="card__content">
-              <form class="form">
-                  <input type="text" name="nom" placeholder="Nom" class="input sup"> <br><br>
-                  <input type="text" name="prenom" placeholder="Prenom" class="input sup"> <br><br>
-                  <input type="text" name="bday" placeholder="Date de naissance" class="input sup"> <br><br>
-                  <div align="justify">
-                    <p class="terms">En acceptant l'inscription, vous: Autorisez les responsables de Val'Acro á faire pratiquer, en cas d'urgence, une intervention médicale ou chirurgicale en cas de nécessité.Autorisez l'adhérent á venir par ses propres moyens sur le lieu d'entraînement ou de compétition et á être transporté en autocar ou, le cas échéant, par les véhicules des accompagnateurs.
-                    </p>
-                    <p style="font-size: 13px; text-align: center;"> <input type="checkbox" name="accept"> Je valide les conditions</p>
-                    <p class="terms">Un certificat médical pourra vous être demandé au cours de l'année</p>
-                    <center><input type="button" name="submit" value="Valider" class="btn btn-dark input"></center>
-                  </div>
-              </form>
-            </div>
-          </div>
+            <h2>Fiche Identité de l'enfant</h2>
+            <p>Vous povez modifier une information en cliquant sur l'icone correspondante</p>
+            <div class="line"></div>
+            <br>
+            <img src="img/user.png" style="height: 250px; width: 250px;">
+            <br><br>
+            <button class='btn btn-dark' style="width: 250px">Sauvegarder ma photo</button>
+            <br><br>
         </center>
-      </ons-page>
-    </template>
+        <div style="margin-left: 35px;">
+          <p><b>Nom:</b> Sarmiento</p>
+          <p><b>Prenom:</b> Javier</p>
+          <p><b>Date de naissance:</b> 11/01/1998</p>
+          <p><b>Groupe:</b></p>
+        </div>
+      </div>
+    </ons-page>
+  </template>
 
   <!-- JS Files -->
   <script src="styles/app.js"></script>
