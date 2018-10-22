@@ -49,11 +49,6 @@ img {
 	margin-top: -10px;
 }
 
-.btn {
-	background-color: black;
-	color: white;
-}
-
 .btn:active {
 	background-color: black;
 	opacity: 0.6;

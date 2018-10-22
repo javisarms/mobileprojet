@@ -13,7 +13,6 @@ window.fn.load = function(page) {
     .then(menu.close.bind(menu));
 };
 
-
 // Pusing and popping pages
 function push(page) {
   document.querySelector('#myNavigator').pushPage(page, {data: {title: 'Event'}});
@@ -25,13 +24,13 @@ window.fn.pop = function() {
 };
 
 // Showing modals
-function showModal() {
-  var modal = document.querySelector('ons-modal');
+function showModal(form) {
+  var modal = document.querySelector(form);
   modal.show({ animation: 'fade' });
 }
 
-function closeModal() {
-  var modal = document.querySelector('ons-modal');
+function closeModal(form) {
+  var modal = document.querySelector(form);
   modal.hide({ animation: 'fade' });
 }
 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Contact</title>
+	<link rel="stylesheet" href="styles/onsen/css/onsenui.css">
+  	<link rel="stylesheet" href="styles/onsen/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="styles/styles.css">
+  	<script src="styles/onsen/js/onsenui.min.js"></script>
+</head>
+<body>
+  <!-- Sidebar / Splitter -->
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <div class="sideIm">
+          <center>
+            <img src="img/valacro_logo.png" style="height: 150px; width: 150px;">
+          </center>
+        </div>
+        <ons-list>
+          <a href="admin_index.html">
+            <ons-list-item tappable>
+              <i class="fas fa-home"></i>&nbsp;&nbsp;Accueil
+            </ons-list-item>
+          </a> 
+          <a href="admin_adherents.html">
+            <ons-list-item tappable>
+              <i class="fa fa-list"></i>&nbsp;&nbsp;Liste Adhérents
+            </ons-list-item>
+          </a>
+          <a href="admin_parents.html">
+            <ons-list-item tappable>
+              <i class="fa fa-list"></i>&nbsp;&nbsp;Liste Parents
+            </ons-list-item>
+          </a>
+          <a href="admin_groupes.html">
+            <ons-list-item tappable style="font-size: 13px;">
+              <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
+            </ons-list-item>
+          </a>
+          <a href="admin_messages.html">
+            <ons-list-item tappable>
+              <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
+            </ons-list-item>
+          </a>
+           
+          <div class="bottom"></div>
+          <a href="admin_contact.html">
+            <ons-list-item tappable>
+              <i class="fas fa-phone"></i>&nbsp;&nbsp;Nous Contacter
+            </ons-list-item>
+          </a>
+          <a href="login.html">
+            <ons-list-item tappable>
+              <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Se Déconnecter
+            </ons-list-item>
+          </a>   
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home.html">
+    </ons-splitter-content>
+  </ons-splitter>
+  
+  <!-- Navigator (for pushing and popping) -->
+  <ons-template id="home.html">
+    <ons-page id="homePage">
+      <ons-navigator id="myNavigator" page="main.html"></ons-navigator>
+    </ons-page>
+  </ons-template>
+  
+  <!-- Main Page -->
+  <template id="main.html">
+    <ons-page id="main">
+    	<!-- Toolbar -->
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu" class="iconz"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Nous Contacter
+        </div>
+      </ons-toolbar>
+
+      <!-- Content -->
+      <center>
+        <div class="card">
+          <h2 class="card__title">Adresse</h2>
+          <p style="margin-top: -13px;">Rue Lomprez 59300 Valenciennes</p>
+          <div class="line"></div>
+          <h2 class="card__title">Contact</h2>
+          <p style="margin-top: -13px;"><b>Del Ciotto Lorenzo</b></p>
+          <p style="margin-top: -13px;">lorenzo.delciotto@neuf.fr</p>
+          <p style="margin-top: -13px;">Fixe: 03.27.36.15.40</p>
+          <p style="margin-top: -13px;">Portable: 06.88.16.30.49</p>
+        </div>
+
+        <div class="card">
+          <img src="img/valacro_logo2.jpg" style="height: 80%; width: auto;">
+        </div>
+
+        <div class="card">
+          <button class="btn btn-dark">Edit</button>
+        </div>
+      </center>
+    </ons-page>
+  </template>
+
+  <!-- JS Files -->
+  <script src="styles/app.js"></script>
+</body>
+</html>

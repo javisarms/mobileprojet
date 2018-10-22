@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Groupes et Entraînements</title>
+	<link rel="stylesheet" href="styles/onsen/css/onsenui.css">
+	<link rel="stylesheet" href="styles/onsen/css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="styles/onsen/js/onsenui.min.js"></script>
+</head>
+<body>
+  <!-- Sidebar / Splitter -->
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <div class="sideIm">
+          <center>
+            <img src="img/valacro_logo.png" style="height: 150px; width: 150px;">
+          </center>
+        </div>
+        <ons-list>
+          <a href="admin_index.html">
+            <ons-list-item tappable>
+              <i class="fas fa-home"></i>&nbsp;&nbsp;Accueil
+            </ons-list-item>
+          </a> 
+          <a href="admin_adherents.html">
+            <ons-list-item tappable>
+              <i class="fa fa-list"></i>&nbsp;&nbsp;Liste Adhérents
+            </ons-list-item>
+          </a>
+          <a href="admin_parents.html">
+            <ons-list-item tappable>
+              <i class="fa fa-list"></i>&nbsp;&nbsp;Liste Parents
+            </ons-list-item>
+          </a>
+          <a href="admin_groupes.html">
+            <ons-list-item tappable style="font-size: 13px;">
+              <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
+            </ons-list-item>
+          </a>
+          <a href="admin_messages.html">
+            <ons-list-item tappable>
+              <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
+            </ons-list-item>
+          </a>
+           
+          <div class="bottom"></div>
+          <a href="admin_contact.html">
+            <ons-list-item tappable>
+              <i class="fas fa-phone"></i>&nbsp;&nbsp;Nous Contacter
+            </ons-list-item>
+          </a>
+          <a href="login.html">
+            <ons-list-item tappable>
+              <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Se Déconnecter
+            </ons-list-item>
+          </a>   
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home.html">
+    </ons-splitter-content>
+  </ons-splitter>
+  
+  <!-- Navigator (for pushing and popping) -->
+  <ons-template id="home.html">
+    <ons-page id="homePage">
+      <ons-navigator id="myNavigator" page="main.html"></ons-navigator>
+    </ons-page>
+  </ons-template>
+
+  <!-- Main Page -->
+  <template id="main.html">
+    <ons-page id="main">
+    	<!-- Toolbar -->
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu" class="iconz"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Groupes et Entraînements
+        </div>
+      </ons-toolbar>
+
+      <!-- Content -->
+      <center>
+      	<div class="baraha">
+          <div class="card" onclick="push('group.html')">
+            <h2 class="card__title">Nom de Groupe</h2>
+            <div class="card__content">
+              <p class="card__txt">Coach: <b>John Doe</b></p>
+              <p class="card__txt">Entraînement: <b>Lundi 18h00</b></p>
+          </div>
+          </div>
+        </div>
+        <div class="baraha">
+          <div class="card" onclick="push('group.html')">
+            <h2 class="card__title">Nom de Groupe</h2>
+            <div class="card__content">
+              <p class="card__txt">Coach: <b>John Doe</b></p>
+              <p class="card__txt">Entraînement: <b>Lundi 18h00</b></p>
+          </div>
+          </div>
+        </div>
+      </center>
+    </ons-page>
+  </template>
+
+  <!-- Group page -->
+  <template id="group.html">
+    <ons-page id="group">
+      <ons-pull-hook id="pull-hook">
+        Pull to refresh
+      </ons-pull-hook>
+      <!-- Toolbar -->
+      <ons-toolbar>
+        <div class="left">
+          <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+        </div>
+      </ons-toolbar>
+      <!-- Content -->
+      <center>
+        <div class="card">
+          <h4 class="card__title">Nom de Groupe</h4>
+          <div class="line"></div>
+          <br>
+          <div class="card__content">
+            <p class="card__txt">Coach: <b>Nom Prenom</b></p>
+            <p class="card__txt">Planning des entraînements: <b>Jeudi 18h00</b></p>
+          </div>
+        </div>
+        <!-- Messages -->
+        <div class="card">
+          <h4 class="card__title">Messages</h4>
+          <div class="card__content">
+            <center>
+              <div class="list-group" style="width: 100%;">
+                  <div class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Message sujet</h5>
+                      <small class="text-muted">3 days ago</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <p class="posted">Posted by: John Doe</p>
+                  </div>
+                  <div class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Message sujet</h5>
+                      <small class="text-muted">4 days ago</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <p class="posted">Posted by: Kylian Mbappe</p>
+                  </div>
+                </div>
+              </center>
+            </div>
+        </div>          
+        <!-- Members -->
+        <div class="card">
+          <h4 class="card__title">Membres du groupe</h4>
+          <div class="card__content">
+            <center>
+              <div style="text-align: left;">
+                <div class="list-group" style="width: 100%">
+                  <a href="memberinfo.html" class="list-group-item list-group-item-action">
+                    <img src="img/user.png" style="height: 25px; width: 25px;"> Jane Doe
+                  </a>
+                  <a href="memberinfo.html" class="list-group-item list-group-item-action">
+                    <img src="img/user.png" style="height: 25px; width: 25px;"> John Doe
+                  </a>
+                </div>
+              </div>
+            </center>
+          </div>
+        </div>   
+        <!-- Options -->
+        <div class="card">
+          <h4 class="card__title">Options</h4>
+          <button class="btn btn-primary" onclick="showModal('#coach')">Coach du groupe</button> <br>
+          <button class="btn btn-secondary" onclick="showModal('#train')">Entrainments</button> <br>
+          <button class="btn btn-dark" onclick="showModal('#gymnastes')">Gérer gymnastes</button> <br>
+          <button class="btn btn-danger" onclick="showModal('#delete')">Supprimer</button> <br>
+        </div>
+    </ons-page>
+  </template>
+
+  <!-- Coach Modal -->
+  <ons-modal id="coach" direction="up">
+    <center>
+      <div class="card fom" style="width: 80%;">
+        <h4>Coach du groupe</h4>
+        <p>
+          <form>
+            <input type="radio" name="coach" value="Rafa">&nbsp;&nbsp;Rafa<br><br>
+            <input type="radio" name="coach" value="Maxime">&nbsp;&nbsp;Maxime<br><br>
+            <input type="radio" name="coach" value="Vincent">&nbsp;&nbsp;Vincent<br><br>
+            <center>
+              <ons-button onclick="closeModal('#coach')"><input type="button" name="submit" value="Valider" class="button"></ons-button>
+            </center>
+          </form>
+        </p>
+      </div>
+    </center>
+  </ons-modal>
+
+  <!-- Training Modal -->
+  <ons-modal id="train" direction="up">
+    <center>
+      <div class="card fom" style="width: 80%;">
+        <h4>Entrainment</h4>
+        <p>
+          <form>
+            <input type="radio" name="day" value="Lundi">&nbsp;&nbsp;Lundi<br><br>
+            <input type="radio" name="day" value="Mardi">&nbsp;&nbsp;Mardi<br><br>
+            <input type="radio" name="day" value="Mercredi">&nbsp;&nbsp;Mercredi<br><br>
+            <input type="radio" name="day" value="Jeudi">&nbsp;&nbsp;Jeudi<br><br>
+            <input type="radio" name="day" value="Vendredi">&nbsp;&nbsp;Vendredi<br><br>
+            <input type="time" name="time" value="18:00">
+            <p></p>
+            <center>
+              <ons-button onclick="closeModal('#train')"><input type="button" name="submit" value="Valider" class="button"></ons-button>
+            </center>
+          </form>
+        </p>
+      </div>
+    </center>
+  </ons-modal>
+
+  <!-- Gymnsats -->
+  <ons-modal id="gymnastes" direction="up">
+    <center>
+      <div class="card fom" style="width: 80%;">
+        <h4>Gymnastes</h4>
+        <p>
+          <form>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input">
+              <div class="checkbox__checkmark"></div>
+              Javier
+            </label>
+            <br>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input">
+              <div class="checkbox__checkmark"></div>
+              Maxime
+            </label>
+            <br>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input">
+              <div class="checkbox__checkmark"></div>
+              Rafa
+            </label>
+            <br><br>
+            <center>
+              <ons-button onclick="closeModal('#gymnastes')"><input type="button" name="submit" value="Valider" class="button"></ons-button>
+            </center>
+          </form>
+        </p>
+      </div>
+    </center>
+  </ons-modal>
+
+  <!-- Deletion Modal -->
+  <ons-modal id="delete" direction="up">
+    <center>
+      <div class="card fom" style="width: 80%;">
+        <h4>Entrainment</h4>
+        <p>
+          <form>
+            <center>
+              <p>Are you sure?</p>
+              <button onclick="closeModal('#delete')"><input type="button" name="submit" value="Valider" class="btn btn-danger"></button>
+              <button onclick="closeModal('#delete')"><input type="button" name="submit" value="Annuler" class="btn btn-primary"></button>
+            </center>
+          </form>
+        </p>
+      </div>
+    </center>
+  </ons-modal>
+
+  <!-- JS Files -->
+  <script src="styles/app.js"></script>
+</body>
+</html>

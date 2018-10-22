@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Val'Acro</title>
+	<link rel="stylesheet" href="styles/onsen/css/onsenui.css">
+  	<link rel="stylesheet" href="styles/onsen/css/onsen-css-components.min.css">
+  	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="styles/styles.css">
+  	<script src="styles/onsen/js/onsenui.min.js"></script>
+
+</head>
+<body>
+	<!-- Sidebar / Splitter -->
+	<ons-splitter>
+	  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+	    <ons-page>
+	    	<div class="sideIm">
+	    		<center>
+	    			<img src="img/valacro_logo.png" style="height: 150px; width: 150px;">
+	    		</center>
+	    	</div>
+	      <ons-list>
+	      	<a href="admin_index.html">
+	      		<ons-list-item tappable>
+	      		  <i class="fas fa-home"></i>&nbsp;&nbsp;Accueil
+	      		</ons-list-item>
+	      	</a> 
+	        <a href="admin_adherents.html">
+	        	<ons-list-item tappable>
+	        	  <i class="fa fa-list"></i>&nbsp;&nbsp;Liste Adhérents
+	        	</ons-list-item>
+	        </a>
+	        <a href="admin_parents.html">
+	        	<ons-list-item tappable>
+	        	  <i class="fa fa-list"></i>&nbsp;&nbsp;Liste Parents
+	        	</ons-list-item>
+	        </a>
+	        <a href="admin_groupes.html">
+	        	<ons-list-item tappable style="font-size: 13px;">
+		          <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
+		        </ons-list-item>
+	        </a>
+	        <a href="admin_messages.html">
+	        	<ons-list-item tappable>
+		          <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
+		        </ons-list-item>
+	        </a>
+	         
+	        <div class="bottom"></div>
+	        <a href="admin_contact.html">
+	        	<ons-list-item tappable>
+	        	  <i class="fas fa-phone"></i>&nbsp;&nbsp;Nous Contacter
+	        	</ons-list-item>
+	        </a>
+	        <a href="login.html">
+	        	<ons-list-item tappable>
+		          <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Se Déconnecter
+		        </ons-list-item>
+	        </a>   
+	      </ons-list>
+	    </ons-page>
+	  </ons-splitter-side>
+	  <ons-splitter-content id="content" page="home.html">
+	  </ons-splitter-content>
+	</ons-splitter>
+	
+	<!-- Navigator (for pushing and popping) -->
+	<ons-template id="home.html">
+	  <ons-page id="homePage">
+	    <ons-navigator id="myNavigator" page="main.html"></ons-navigator>
+	  </ons-page>
+	</ons-template>
+
+	<!-- Events Page -->
+	<template id="main.html">
+	  <ons-page id="main">
+	  	<ons-pull-hook id="pull-hook">
+	  	  Pull to refresh
+	  	</ons-pull-hook>
+	  	
+	  	<!-- Toolbar -->
+	    <ons-toolbar>
+	      <div class="left">
+	        <ons-toolbar-button onclick="fn.open()">
+	          <ons-icon icon="md-menu" class="iconz"></ons-icon>
+	        </ons-toolbar-button>
+	      </div>
+	      <div class="center">
+	        Liste des évènements
+	      </div>
+	    </ons-toolbar>
+	    <!-- Content -->
+	    <center>
+	    	<!-- Event cards -->
+	    	<div class="baraha">
+	    	  <div class="card" onclick="push('event.html')">
+	    	  	<!-- <center><img class="poster" src="img/poster.jpg" onclick="fn.load('event.html')"></center> -->
+	    	  	<center><img class="poster" src="img/poster.jpg"></center>
+	    	    <h2 class="card__title">Event Title | Date </h2>
+	    	    <div class="card__content">
+	    	    	<p class="card__txt">Loren ipsum dolor sit amet, consectetur.</p>
+	    		</div>
+	    	  </div>
+	    	</div>
+
+	    	<div class="baraha">
+	    	  <div class="card" onclick="push('event.html')">
+	    	  	<!-- <center><img class="poster" src="img/poster.jpg" onclick="fn.load('event.html')"></center> -->
+	    	  	<center><img class="poster" src="img/poster.jpg"></center>
+	    	    <h2 class="card__title">Event Title | Date </h2>
+	    	    <div class="card__content">
+	    	    	<p class="card__txt">Loren ipsum dolor sit amet, consectetur.</p>
+	    		</div>
+	    	  </div>
+	    	</div>
+	    	<br>
+	    	<!-- Calendar -->
+	    	<ons-button class="btn-red"><i class="fas fa-plus" aria-hidden="true"></i></ons-button>
+	    	<ons-button class="btn-red"><i class="fa fa-calendar" aria-hidden="true"></i></ons-button>
+	    	<br><br><br>
+	    </center>
+	  </ons-page>
+	</template>
+
+
+	<!-- Event page -->
+	<!-- We have to make a template for each event (foreach loop) -->
+	<template id="event.html">
+	  <ons-page id="event">
+	  	<!-- Toolbar -->
+	    <ons-toolbar>
+	      <div class="left">
+      		<button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+	      </div>
+	    </ons-toolbar>
+	    <!-- Content -->
+	    <center>
+	    	<div class="card">
+	    		<h4 class="card__title">Event Title</h4>
+	    		<div class="card__content">
+	    	    	<p class="card__txt">De:</p>
+	    	    	<p class="card__txt">Date de debut: </p>
+	    	    	<p class="card__txt">Date de fin: </p>
+	    	    	<p class="card__txt">Addresse:</p>
+	    	    	<div class="line"></div>
+	    	    	<br>
+	    	    	<p class="card__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	    		</div>
+	    	</div>
+
+	    	<div class="card">
+	    		<br>
+    			<div class="card__content">
+    		    	<p>Map here (hopefully)</p>
+    			</div>
+	    	</div>
+
+	    	<div class="card">
+	    		<a href="#" class="btn btn-dark">Edit Info</a>
+	    	</div>
+	    </center>
+	  </ons-page>
+	</template>
+
+	<!-- JS Files -->
+	<script src="styles/app.js"></script>
+</body>
+</html>
