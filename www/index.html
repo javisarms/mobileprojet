@@ -9,8 +9,11 @@
   	<link rel="stylesheet" href="styles/onsen/css/onsen-css-components.min.css">
   	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
   	<link rel="stylesheet" href="styles/styles.css">
+  	<link rel="stylesheet" href="styles/fullcalendar/fullcalendar.css">
+  	<script src="styles/fullcalendar/lib/jquery.min.js"></script>
+  	<script src="styles/fullcalendar/lib/moment.min.js"></script>
+  	<script src="styles/fullcalendar/fullcalendar.js"></script>
   	<script src="styles/onsen/js/onsenui.min.js"></script>
-
 </head>
 <body>
 	<!-- Sidebar / Splitter -->
@@ -113,7 +116,9 @@
 	    	</div>
 	    	<br>
 	    	<!-- Calendar -->
-	    	<ons-button class="btn-red"><i class="fa fa-calendar" aria-hidden="true"></i></ons-button>
+	    	<a href="calendar.html">
+	    		<ons-button class="btn-red"><i class="fa fa-calendar" aria-hidden="true"></i></ons-button>
+	    	</a>
 	    	<br><br><br>
 	    </center>
 	  </ons-page>
@@ -154,7 +159,6 @@
 	    </center>
 	  </ons-page>
 	</template>
-
 	<!-- JS Files -->
 	<script src="styles/app.js"></script>
 </body>
