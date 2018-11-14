@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles/styles.css">
 	<script src="styles/onsen/js/onsenui.min.js"></script>
+  <script src="styles/fullcalendar/lib/jquery.min.js"></script>
+
 </head>
 <body>  
 
@@ -27,22 +29,21 @@
         </center>
       </div>
       <div style="text-align: center; margin-top: 30px;">
-        <p>
-          <ons-input id="email" modifier="underbar" placeholder="Adresse mail" float></ons-input>
-        </p>
-        <p>
-          <ons-input id="password" modifier="underbar" type="Mot de passe" placeholder="Password" float></ons-input>
-        </p>
+        <center>
+          <form style="width: 75%;">
+              <input type="text" id="email" name="email" placeholder="Adresse mail" class="input sup"> <br><br>
+              <input type="password" id="password" name="password" placeholder="Mot de passe" class="input sup"> <br><br>
+          </form>
+        </center>
         <p style="margin-top: 30px;">
-          <a href="index.html">
-            <ons-button onclick="login()" class="btn btn-dark">Connexion</ons-button>
-          </a>
+          <button id="loginButton" class="btn btn-dark">
+            Connexion
+          </button>
         </p>
         <br>
         <a onclick="push('forgot.html')" style="color: #555; text-decoration: underline;">Mot de passe oublié</a> <br> <br>
         <a onclick="push('signup.html')" style="color: #555; text-decoration: underline;">Pas encore incrit?</a>
         <br><br>
-        <a href="admin_index.html">Admin</a>
       </div>
     </ons-page>
   </template>
@@ -60,10 +61,10 @@
         <div class="card">
           <h2>Sign up</h2>
           <form>
-              <input type="text" name="email" placeholder="Adresse mail" class="input sup"> <br><br>
-              <input type="password" name="passe" placeholder="Mot de passe" class="input sup"> <br><br>
-              <input type="password" name="confirm" placeholder="Confirmez votre mot de passe" class="input sup"> <br><br>
-              <input type="button" name="submit" value="Valider" class="btn btn-dark input">
+              <input type="text" name="semail" placeholder="Adresse mail" class="input sup"> <br><br>
+              <input type="password" name="spasse" placeholder="Mot de passe" class="input sup"> <br><br>
+              <input type="password" name="sconfirm" placeholder="Confirmez votre mot de passe" class="input sup"> <br><br>
+              <input type="button" name="ssubmit" value="Valider" class="btn btn-dark input">
           </form>
         </div>
       </center>
@@ -92,5 +93,6 @@
 
   <!-- JS Files -->
   <script src="styles/app.js"></script>
+  <script src="js/login.js"></script>
 </body>
 </html>

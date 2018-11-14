@@ -33,40 +33,29 @@ function closeModal(form) {
   var modal = document.querySelector(form);
   modal.hide({ animation: 'fade' });
 }
-
 // Pull to refresh
-ons.ready(function() {
-  var pullHook = document.getElementById('pull-hook');
+// ons.ready(function() {
+//   var pullHook = document.getElementById('pull-hook');
 
-  pullHook.addEventListener('changestate', function(event) {
-    var message = '';
+//   pullHook.addEventListener('changestate', function(event) {
+//     var message = '';
 
-    switch (event.state) {
-      case 'initial':
-        message = 'Pull to refresh';
-        break;
-      case 'preaction':
-        message = 'Release';
-        break;
-      case 'action':
-        message = 'Loading...';
-        break;
-    }
+//     switch (event.state) {
+//       case 'initial':
+//         message = 'Pull to refresh';
+//         break;
+//       case 'preaction':
+//         message = 'Release';
+//         break;
+//       case 'action':
+//         message = 'Loading...';
+//         break;
+//     }
 
-    pullHook.innerHTML = message;
-  });
+//     pullHook.innerHTML = message;
+//   });
 
-  pullHook.onAction = function(done) {
-    setTimeout(done, 1000);
-  };
-});
-
-// Login
-var login = function() {
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
-
-  if (email != 'bob' && password != 'secret') {
-    ons.notification.alert('Incorrect username or password.');
-  }
-};
+//   pullHook.onAction = function(done) {
+//     setTimeout(done, 1000);
+//   };
+// });
