@@ -33,6 +33,7 @@ function closeModal(form) {
   var modal = document.querySelector(form);
   modal.hide({ animation: 'fade' });
 }
+
 // Pull to refresh
 // ons.ready(function() {
 //   var pullHook = document.getElementById('pull-hook');
