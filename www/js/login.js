@@ -21,7 +21,15 @@ $(document).ready(function(){
                     localStorage.setItem('uemail',email);
                     localStorage.setItem('upwd',password);
                     localStorage.setItem('uid',obj.user_id);
-                    if (obj.user_id == 2) {
+                    localStorage.setItem('pid',obj.profil_id);
+                    localStorage.setItem('iscoach',obj.is_coach);
+                    localStorage.setItem('isparent',obj.profil_parent);
+                    localStorage.setItem('isadherent',obj.profil_adherent);
+                    localStorage.setItem('iscomite',obj.in_comite);
+                    localStorage.setItem('isadmin',obj.is_admin);
+
+                    
+                    if (obj.is_coach == 1 && obj.is_admin == 1 && obj.in_comite == 1) {
                         window.location.href = "admin_index.html";   
                     }
                     else {

@@ -39,7 +39,7 @@
                 <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
               </ons-list-item>
             </a>
-            <a href="messages.html">
+            <a href="messages.html" id='messagesSide'>
               <ons-list-item tappable>
                 <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
               </ons-list-item>
@@ -89,7 +89,8 @@
           <div class="line"></div>
           <br>
           <div class="card__content" id = "cContent">
-            <p class="card__txt">Planning des entraînements: <b id="entrain"></b></p>
+            <p class='card__txt'>Coach: <b id='putCoach'>None</b></p>
+            <p class="card__txt">Planning des entraînements: <b id="entrain">None</b></p>
           </div>
         </div>
         <!-- Messages -->
@@ -106,14 +107,6 @@
                     <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                     <p class="posted">Posted by: John Doe</p>
                   </div>
-                  <div class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">Message sujet</h5>
-                      <small class="text-muted">4 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <p class="posted">Posted by: Kylian Mbappe</p>
-                  </div>
                 </div>
               </center>
             </div>
@@ -124,13 +117,7 @@
           <div class="card__content">
             <center>
               <div style="text-align: left;">
-                <div class="list-group" style="width: 100%">
-                  <p class="list-group-item list-group-item-action">
-                    <img src="img/user.png" style="height: 25px; width: 25px;"> Jane Doe
-                  </p>
-                  <p class="list-group-item list-group-item-action">
-                    <img src="img/user.png" style="height: 25px; width: 25px;"> John Doe
-                  </p>
+                <div class="list-group" id="putMembers" style="width: 100%">
                 </div>
               </div>
             </center>

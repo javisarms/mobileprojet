@@ -89,7 +89,8 @@
           <div class="line"></div>
           <br>
           <div class="card__content" id = "cContent">
-            <p class="card__txt">Planning des entraînements: <b id="entrain"></b></p>
+            <p class='card__txt'>Coach: <b id='putCoach'>None</b></p>
+            <p class="card__txt">Planning des entraînements: <b id="entrain">None</b></p>
           </div>
         </div>
         <!-- Messages -->
@@ -106,14 +107,6 @@
                     <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                     <p class="posted">Posted by: John Doe</p>
                   </div>
-                  <div class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">Message sujet</h5>
-                      <small class="text-muted">4 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <p class="posted">Posted by: Kylian Mbappe</p>
-                  </div>
                 </div>
               </center>
             </div>
@@ -124,25 +117,25 @@
           <div class="card__content">
             <center>
               <div style="text-align: left;">
-                <div class="list-group" style="width: 100%">
-                  <p class="list-group-item list-group-item-action">
-                    <img src="img/user.png" style="height: 25px; width: 25px;"> Jane Doe
-                  </p>
-                  <p class="list-group-item list-group-item-action">
-                    <img src="img/user.png" style="height: 25px; width: 25px;"> John Doe
-                  </p>
+                <div class="list-group" id="putMembers" style="width: 100%">
                 </div>
               </div>
             </center>
           </div>
-        </div>
+        </div>              
         <!-- Options -->
         <div class="card">
-          <h4 class="card__title">Options</h4>
-          <button class="btn btn-primary" onclick="showModal('#coach')">Coach du groupe</button> <br>
-          <button class="btn btn-secondary" onclick="showModal('#train')">Entrainments</button> <br>
-          <button class="btn btn-dark" onclick="showModal('#gymnastes')">Gérer gymnastes</button> <br>
-          <button class="btn btn-danger" onclick="showModal('#delete')">Supprimer</button> <br>
+          <h4 class="card__title">Add</h4>
+          <button id='editCoachButton' class="btn btn-primary" onclick="showModal('#coach')">Add Coach</button> <br>
+          <button id='editTrainButton' class="btn btn-secondary" onclick="showModal('#train')">Add Entrainment</button> <br>
+          <button id='editGymnButton' class="btn btn-dark" onclick="showModal('#gymnastes')">Add gymnast</button> <br>
+        </div>
+        <div class="card">
+          <h4 class="card__title">Remove</h4>
+          <button id='removeCoachButton' class="btn btn-danger" onclick="showModal('#delete')">Remove Coach</button> <br>
+          <button id='removeTrainButton' class="btn btn-danger" onclick="showModal('#delete')">Remove Training</button> <br>
+          <button id='removeGymnButton' class="btn btn-danger" onclick="showModal('#delete')">Remove gymnast</button> <br>
+          <button id='deleteButton' class="btn btn-danger" onclick="showModal('#delete')">Supprimer</button> <br>
         </div>              
     </ons-page>
   </template>
@@ -196,27 +189,10 @@
       <div class="card fom" style="width: 80%;">
         <h4>Gymnastes</h4>
         <p>
-          <form>
-            <label class="checkbox">
-              <input type="checkbox" class="checkbox__input">
-              <div class="checkbox__checkmark"></div>
-              Javier
-            </label>
-            <br>
-            <label class="checkbox">
-              <input type="checkbox" class="checkbox__input">
-              <div class="checkbox__checkmark"></div>
-              Maxime
-            </label>
-            <br>
-            <label class="checkbox">
-              <input type="checkbox" class="checkbox__input">
-              <div class="checkbox__checkmark"></div>
-              Rafa
-            </label>
+          <form id='gymnForm'>
             <br><br>
             <center>
-              <ons-button onclick="closeModal('#gymnastes')"><input type="button" name="submit" value="Valider" class="button"></ons-button>
+              <ons-button onclick="addGymnast()"><input type="button" name="submit" value="Valider" class="button"></ons-button>
             </center>
           </form>
         </p>

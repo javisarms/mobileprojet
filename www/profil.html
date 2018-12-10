@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
   	<link rel="stylesheet" href="styles/styles.css">
   	<script src="styles/onsen/js/onsenui.min.js"></script>
+    <script src="js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
   <!-- Sidebar / Splitter -->
@@ -37,7 +38,7 @@
   		          <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
   		        </ons-list-item>
   	        </a>
-  	        <a href="messages.html">
+  	        <a href="messages.html" id='messagesSide'>
   	        	<ons-list-item tappable>
   		          <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
   		        </ons-list-item>
@@ -85,101 +86,149 @@
       <!-- Content -->
       <center>
       	<div class="card">
-         <h3>Visualiser Mes Informations</h3>
-         <p>Vous trouverez sur cette page le nombre d'adhérents inscrits ainsi que les principales informations les concernant.</p>
+         <p>Name: <b id="myName"></b></p>
+         <p>Email: <b id="myEmail"></b></p>
+         <p>Contact: <b id="myContact"></b></p>
+         <p>Date de naissance: <b id="myBday"></b></p>
+         <p>Status: <b id="myStatus"></b></p>
         </div>
         <!-- Enfants -->
-        <div class="card">
+        <div class="card" id='viewEnfants'>
           <h4 class="card__title">Liste de enfants</h4>
           <div class="card__content">
             <center>
               <div style="text-align: left;">
-                  <div class="list-group" style="width: 100%">
-                    <a onclick="push('member.html')" class="list-group-item list-group-item-action">
-                      <img src="img/user.png" style="height: 25px; width: 25px;"> Jane Doe
-                    </a>
-                    <a onclick="push('member.html')" class="list-group-item list-group-item-action">
-                      <img src="img/user.png" style="height: 25px; width: 25px;"> John Doe
-                    </a>
+                  <div class="list-group" style="width: 100%" id='putEnfants'>
                   </div>
                 </div>
               </div>
             </center>
         </div> 
-        <!-- Add enfant -->
-        <div class="card" onclick="push('addEnfant.html')" style="background-color: black; color: white;">
-          <center>
-            <h5>Ajouter Enfant</h5>
-          </center>
-        </div>
-      </center>
-    </ons-page>
-  </template>
-
-  <!-- Add enfant -->
-  <template id="addEnfant.html">
-    <ons-page id="addEnfant">
-      <!-- Toolbar -->
-      <ons-toolbar>
-        <div class="left">
-          <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
-        </div>
-      </ons-toolbar>
-      <!-- Content -->
-      <center>
+        <!-- Options -->
         <div class="card">
-          <h4 class="card__title">Formulaire d'inscription</h4>
-          <div class="card__content">
-            <form class="form">
-                <input type="text" name="nom" placeholder="Nom" class="input sup"> <br><br>
-                <input type="text" name="prenom" placeholder="Prenom" class="input sup"> <br><br>
-                <input type="text" name="bday" placeholder="Date de naissance" class="input sup"> <br><br>
-                <div align="justify">
-                  <p class="terms">En acceptant l'inscription, vous: Autorisez les responsables de Val'Acro á faire pratiquer, en cas d'urgence, une intervention médicale ou chirurgicale en cas de nécessité.Autorisez l'adhérent á venir par ses propres moyens sur le lieu d'entraînement ou de compétition et á être transporté en autocar ou, le cas échéant, par les véhicules des accompagnateurs.
-                  </p>
-                  <p style="font-size: 13px; text-align: center;"> <input type="checkbox" name="accept"> Je valide les conditions</p>
-                  <p class="terms">Un certificat médical pourra vous être demandé au cours de l'année</p>
-                  <center><input type="button" name="submit" value="Valider" class="btn btn-dark input"></center>
-                </div>
-            </form>
-          </div>
+          <h4 class="card__title">Options</h4>
+          <button class="btn btn-primary" onclick="push('editName.html')">Edit Name</button> <br>
+          <button class="btn btn-primary" onclick="push('editEmail.html')">Edit Email</button> <br>
+          <button class="btn btn-primary" onclick="push('editContact.html')">Edit Contact</button> <br>
+        </div>
+
+        <div class="card" id="parentz">
+          <h4 class="card__title">Enfant Options</h4>
+          <button class="btn btn-primary" onclick="push('addEnfant.html')">Add Enfant</button> <br>
         </div>
       </center>
     </ons-page>
   </template>
 
-  <!-- Individual gymnasts (for each loop) -->
-  <template id="member.html">
-    <ons-page id="member">
-      <!-- Toolbar -->
-      <ons-toolbar>
-        <div class="left">
-          <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
-        </div>
-      </ons-toolbar>
-      <!-- Content -->
+<!-- Add enfant -->
+<template id="addEnfant.html">
+  <ons-page id="addEnfant">
+    <!-- Toolbar -->
+    <ons-toolbar>
+      <div class="left">
+        <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+      </div>
+    </ons-toolbar>
+    <!-- Content -->
+    <center>
       <div class="card">
-        <center>
-            <h2>Fiche Identité de l'enfant</h2>
-            <p>Vous povez modifier une information en cliquant sur l'icone correspondante</p>
-            <div class="line"></div>
-            <br>
-            <img src="img/user.png" style="height: 250px; width: 250px;">
-            <br><br>
-            <button class='btn btn-dark' style="width: 250px">Sauvegarder ma photo</button>
-            <br><br>
-        </center>
-        <div style="margin-left: 35px;">
-          <p><b>Nom:</b> Sarmiento</p>
-          <p><b>Prenom:</b> Javier</p>
-          <p><b>Date de naissance:</b> 11/01/1998</p>
-          <p><b>Groupe:</b></p>
+        <h4 class="card__title">Formulaire d'inscription</h4>
+        <div class="card__content">
+          <form class="form">
+              <input type="text" name="nom" placeholder="Nom" class="input sup"> <br><br>
+              <input type="text" name="prenom" placeholder="Prenom" class="input sup"> <br><br>
+              <input type="text" name="email" placeholder="Email" class="input sup"> <br><br>
+              <input type="text" name="contact" placeholder="Contact number" class="input sup"> <br><br>
+              <input type="text" name="bday" placeholder="Date de naissance" class="input sup"> <br><br>
+              <div align="justify">
+                <p class="terms">En acceptant l'inscription, vous: Autorisez les responsables de Val'Acro á faire pratiquer, en cas d'urgence, une intervention médicale ou chirurgicale en cas de nécessité.Autorisez l'adhérent á venir par ses propres moyens sur le lieu d'entraînement ou de compétition et á être transporté en autocar ou, le cas échéant, par les véhicules des accompagnateurs.
+                </p>
+                <p style="font-size: 13px; text-align: center;"> <input type="checkbox" name="accept"> Je valide les conditions</p>
+                <p class="terms">Un certificat médical pourra vous être demandé au cours de l'année</p>
+                <center><input type="button" name="submit" value="Valider" class="btn btn-dark input"></center>
+              </div>
+          </form>
         </div>
       </div>
-    </ons-page>
-  </template>
+    </center>
+  </ons-page>
+</template>
+
+<!-- Change Name -->
+<template id="editName.html">
+  <ons-page id="editName">
+    <!-- Toolbar -->
+    <ons-toolbar>
+      <div class="left">
+        <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+      </div>
+    </ons-toolbar>
+    <!-- Content -->
+    <center>
+      <div class="card">
+        <h4 class="card__title">Edit Name</h4>
+        <div class="card__content">
+          <form class="form">
+              <input type="text" id="editNom" placeholder="Nom" class="input sup"> <br><br>
+              <input type="text" id="editPrenom" placeholder="Prenom" class="input sup"> <br><br>
+              <center><input type="button" onclick="editName()" name="submit" value="Valider" class="btn btn-dark input"></center>
+          </form>
+        </div>
+      </div>
+    </center>
+  </ons-page>
+</template>
+
+<!-- Change email -->
+<template id="editEmail.html">
+  <ons-page id="editEmail">
+    <!-- Toolbar -->
+    <ons-toolbar>
+      <div class="left">
+        <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+      </div>
+    </ons-toolbar>
+    <!-- Content -->
+    <center>
+      <div class="card">
+        <h4 class="card__title">Edit Email</h4>
+        <div class="card__content">
+          <form class="form">
+              <input type="text" id="editEm" placeholder="Email" class="input sup"> <br><br>
+              <center><input type="button" onclick="editEmail()" name="submit" value="Valider" class="btn btn-dark input"></center>
+          </form>
+        </div>
+      </div>
+    </center>
+  </ons-page>
+</template>
+
+<!-- Change Contact -->
+<template id="editContact.html">
+  <ons-page id="editContact">
+    <!-- Toolbar -->
+    <ons-toolbar>
+      <div class="left">
+        <button class="iconz" onclick="fn.pop()"><i class="fas fa-chevron-left"></i>&nbsp;Back</button>
+      </div>
+    </ons-toolbar>
+    <!-- Content -->
+    <center>
+      <div class="card">
+        <h4 class="card__title">Edit Contact</h4>
+        <div class="card__content">
+          <form class="form">
+              <input type="text" id="editCo" placeholder="Contact" class="input sup"> <br><br>
+              <center><input type="button" onclick="editContact()" name="submit" value="Valider" class="btn btn-dark input"></center>
+          </form>
+        </div>
+      </div>
+    </center>
+  </ons-page>
+</template>
 
   <!-- JS Files -->
   <script src="styles/app.js"></script>
+  <script src="js/profil.js"></script>
 </body>
 </html>

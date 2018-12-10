@@ -10,6 +10,7 @@
   	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
   	<link rel="stylesheet" href="styles/styles.css">
   	<script src="styles/onsen/js/onsenui.min.js"></script>
+  	<script src="js/jquery.js"></script>
 
 </head>
 <body>
@@ -93,38 +94,11 @@
 	      </div>
 	    </ons-toolbar>
 	    <!-- Content -->
-	    <center>
-	    	<!-- Event cards -->
-	    	<div class="baraha">
-	    	  <div class="card" onclick="push('event.html')">
-	    	  	<!-- <center><img class="poster" src="img/poster.jpg" onclick="fn.load('event.html')"></center> -->
-	    	  	<center><img class="poster" src="img/poster.jpg"></center>
-	    	    <h2 class="card__title">Event Title | Date </h2>
-	    	    <div class="card__content">
-	    	    	<p class="card__txt">Loren ipsum dolor sit amet, consectetur.</p>
-	    		</div>
-	    	  </div>
-	    	</div>
-
-	    	<div class="baraha">
-	    	  <div class="card" onclick="push('event.html')">
-	    	  	<!-- <center><img class="poster" src="img/poster.jpg" onclick="fn.load('event.html')"></center> -->
-	    	  	<center><img class="poster" src="img/poster.jpg"></center>
-	    	    <h2 class="card__title">Event Title | Date </h2>
-	    	    <div class="card__content">
-	    	    	<p class="card__txt">Loren ipsum dolor sit amet, consectetur.</p>
-	    		</div>
-	    	  </div>
-	    	</div>
-	    	<br>
-	    	<!-- Calendar -->
-	    	<ons-button class="btn-red"><i class="fas fa-plus" aria-hidden="true"></i></ons-button>
-	    	<ons-button class="btn-red"><i class="fa fa-calendar" aria-hidden="true"></i></ons-button>
-	    	<br><br><br>
+	    <div id="trial"></div>
+	    <center id="eventCards">
 	    </center>
 	  </ons-page>
 	</template>
-
 
 	<!-- Event page -->
 	<!-- We have to make a template for each event (foreach loop) -->
@@ -167,5 +141,6 @@
 
 	<!-- JS Files -->
 	<script src="styles/app.js"></script>
+	<script src="js/admin_index.js"></script>
 </body>
 </html>
