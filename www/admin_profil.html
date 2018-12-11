@@ -14,53 +14,63 @@
 </head>
 <body>
   <!-- Sidebar / Splitter -->
-  	<ons-splitter>
-  	  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-  	    <ons-page>
-  	    	<div class="sideIm">
-  	    		<center>
-  	    			<img src="img/valacro_logo.png" style="height: 150px; width: 150px;">
-  	    		</center>
-  	    	</div>
-  	      <ons-list>
-  	      	<a href="index.html">
-  	      		<ons-list-item tappable>
-  	      		  <i class="fas fa-home"></i>&nbsp;&nbsp;Accueil
-  	      		</ons-list-item>
-  	      	</a> 
-  	        <a href="profil.html">
-  	        	<ons-list-item tappable>
-  	        	  <i class="fas fa-user"></i>&nbsp;&nbsp;Mon Profil
-  	        	</ons-list-item>
-  	        </a>
-  	        <a href="groupes.html">
-  	        	<ons-list-item tappable style="font-size: 13px;">
-  		          <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
-  		        </ons-list-item>
-  	        </a>
-  	        <a href="messages.html" id='messagesSide'>
-  	        	<ons-list-item tappable>
-  		          <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
-  		        </ons-list-item>
-  	        </a>
-  	        
-  	        <div class="bottom"></div>
-  	        <a href="contact.html">
-  	        	<ons-list-item tappable>
-  	        	  <i class="fas fa-phone"></i>&nbsp;&nbsp;Nous Contacter
-  	        	</ons-list-item>
-  	        </a>
-  	        <a href="login.html">
-  	        	<ons-list-item tappable>
-  		          <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Se Déconnecter
-  		        </ons-list-item>
-  	        </a>   
-  	      </ons-list>
-  	    </ons-page>
-  	  </ons-splitter-side>
-  	  <ons-splitter-content id="content" page="home.html">
-  	  </ons-splitter-content>
-  	</ons-splitter>
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <div class="sideIm">
+          <center>
+            <img src="img/valacro_logo.png" style="height: 150px; width: 150px;">
+          </center>
+        </div>
+        <ons-list>
+          <a href="admin_index.html">
+            <ons-list-item tappable>
+              <i class="fas fa-home"></i>&nbsp;&nbsp;Accueil
+            </ons-list-item>
+          </a> 
+          <a href="admin_adherents.html" id='adherentsSide'>
+            <ons-list-item tappable>
+              <i class="fa fa-list"></i>&nbsp;&nbsp;Liste Adhérents
+            </ons-list-item>
+          </a>
+          <a href="admin_parents.html" id='parentsSide'>
+            <ons-list-item tappable>
+              <i class="fa fa-list"></i>&nbsp;&nbsp;Liste Parents
+            </ons-list-item>
+          </a>
+          <a href="admin_groupes.html">
+            <ons-list-item tappable style="font-size: 13px;">
+              <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
+            </ons-list-item>
+          </a>
+          <a href="admin_messages.html" id='messagesSide'>
+            <ons-list-item tappable>
+              <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
+            </ons-list-item>
+          </a>
+          <a href="admin_profil.html">
+            <ons-list-item tappable>
+              <i class="fas fa-user"></i>&nbsp;&nbsp;Mon Profil
+            </ons-list-item>
+          </a>
+           
+          <div class="bottom"></div>
+          <a href="admin_contact.html">
+            <ons-list-item tappable>
+              <i class="fas fa-phone"></i>&nbsp;&nbsp;Nous Contacter
+            </ons-list-item>
+          </a>
+          <a href="login.html">
+            <ons-list-item tappable>
+              <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Se Déconnecter
+            </ons-list-item>
+          </a>   
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home.html">
+    </ons-splitter-content>
+  </ons-splitter>
   
   <!-- Navigator (for pushing and popping) -->
   <ons-template id="home.html">
@@ -229,6 +239,6 @@
 
   <!-- JS Files -->
   <script src="styles/app.js"></script>
-  <script src="js/profil.js"></script>
+  <script src="js/admin_profil.js"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ $(document).ready(function(){
                     localStorage.setItem('isadmin',obj.is_admin);
 
                     
-                    if (obj.is_coach == 1 && obj.is_admin == 1 && obj.in_comite == 1) {
+                    if (obj.is_coach == 1 || obj.is_admin == 1 || obj.in_comite == 1) {
                         window.location.href = "admin_index.html";   
                     }
                     else {

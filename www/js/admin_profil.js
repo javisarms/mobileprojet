@@ -17,15 +17,12 @@ $(document).ready(function() {
 
 function hideItems() {
 	//Hide sidebar
-	if (is_admin == 0 && is_comite == 0 && is_coach == 0) {
-		document.getElementById("messagesSide").style.display = "none";
-	}
-
-	//Hide if not parent
-	if (is_parent == 0) {
-		document.getElementById("parentz").style.display = "none";
-		document.getElementById("viewEnfants").style.display = "none";
-	}
+ 	if (is_admin == 0 && is_comite == 0 && is_coach == 1) {
+ 		// var x = document.getElementById("messagesSide");
+ 		// x.style.display = "none";
+ 		document.getElementById("adherentsSide").style.display = "none";
+ 		document.getElementById("parentsSide").style.display = "none";
+ 	}
 }
 
 function showProfile() {

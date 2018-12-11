@@ -39,7 +39,7 @@
                 <i class="fas fa-users" style="font-size: 16px;"></i>&nbsp;&nbsp;Groupes et Entraînements
               </ons-list-item>
             </a>
-            <a href="messages.html">
+            <a href="messages.html" id='messagesSide'>
               <ons-list-item tappable>
                 <i class="fas fa-envelope"></i>&nbsp;&nbsp;Messagerie
               </ons-list-item>
@@ -132,9 +132,9 @@
         </div>
         <div class="card">
           <h4 class="card__title">Remove</h4>
-          <button id='removeCoachButton' class="btn btn-danger" onclick="showModal('#delete')">Remove Coach</button> <br>
-          <button id='removeTrainButton' class="btn btn-danger" onclick="showModal('#delete')">Remove Training</button> <br>
-          <button id='removeGymnButton' class="btn btn-danger" onclick="showModal('#delete')">Remove gymnast</button> <br>
+          <button id='removeCoachButton' class="btn btn-danger" onclick="showModal('#delCoach')">Remove Coach</button> <br>
+          <button id='removeTrainButton' class="btn btn-danger" onclick="showModal('#delTrain')">Remove Training</button> <br>
+          <button id='removeGymnButton' class="btn btn-danger" onclick="showModal('#delGym')">Remove gymnast</button> <br>
           <button id='deleteButton' class="btn btn-danger" onclick="showModal('#delete')">Supprimer</button> <br>
         </div>              
     </ons-page>
@@ -149,6 +149,22 @@
           <form id='coachForm'>
             <center>
               <ons-button onclick="editCoach()"><input type="button" name="submit" value="Valider" class="button"></ons-button>
+            </center>
+          </form>
+        </p>
+      </div>
+    </center>
+  </ons-modal>
+
+  <!-- Delete Coach Modal -->
+  <ons-modal id="delCoach" direction="up">
+    <center>
+      <div class="card fom" style="width: 80%;">
+        <h4>Remove Coach</h4>
+        <p>
+          <form id='deleteCoach'>
+            <center>
+              <ons-button onclick="deleteCoach()"><input type="button" name="submit" value="Valider" class="button"></ons-button>
             </center>
           </form>
         </p>
@@ -183,6 +199,22 @@
     </center>
   </ons-modal>
 
+  <!-- Delete Training Modal -->
+  <ons-modal id="delTrain" direction="up">
+    <center>
+      <div class="card fom" style="width: 80%;">
+        <h4>Remove Training</h4>
+        <p>
+          <form id='deleteTraining'>
+            <center>
+              <ons-button onclick="deleteTraining()"><input type="button" name="submit" value="Valider" class="button"></ons-button>
+            </center>
+          </form>
+        </p>
+      </div>
+    </center>
+  </ons-modal>
+
   <!-- Gymnsats -->
   <ons-modal id="gymnastes" direction="up">
     <center>
@@ -193,6 +225,22 @@
             <br><br>
             <center>
               <ons-button onclick="addGymnast()"><input type="button" name="submit" value="Valider" class="button"></ons-button>
+            </center>
+          </form>
+        </p>
+      </div>
+    </center>
+  </ons-modal>
+
+  <!-- Delete Gymnasts Modal -->
+  <ons-modal id="delGym" direction="up">
+    <center>
+      <div class="card fom" style="width: 80%;">
+        <h4>Remove Member</h4>
+        <p>
+          <form id='deleteGymn'>
+            <center>
+              <ons-button onclick="deleteGymn()"><input type="button" name="submit" value="Valider" class="button"></ons-button>
             </center>
           </form>
         </p>

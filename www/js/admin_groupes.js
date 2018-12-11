@@ -24,11 +24,13 @@ $(document).ready(function() {
 
 
 function hideItems() {
-	var uid = localStorage.getItem('uid');
-	if (is_admin == 0) {
-		document.getElementById("editCoachButton").style.display = "none";
-		document.getElementById("deleteButton").style.display = "none";
-	}
+	//Hide sidebar
+ 	if (is_admin == 0 && is_comite == 0 && is_coach == 1) {
+ 		// var x = document.getElementById("messagesSide");
+ 		// x.style.display = "none";
+ 		document.getElementById("adherentsSide").style.display = "none";
+ 		document.getElementById("parentsSide").style.display = "none";
+ 	}
 }
 
 function generateCards() {
@@ -39,10 +41,10 @@ function generateCards() {
  	var arrOfGID = [];
 
  	//Get Group IDs based on logged in User's ID
- 	$.getJSON(url,function(result) {
+ 	$.getJSON(urlCoach,function(result) {
 		$.each(result, function(i, field) {
-		 	var guid = field.user_id;
-		 	var puid = field.profil_id;
+		 	var guid = field.coach_user_id;
+		 	var puid = field.coach_profil_id;
 		 	var gid = field.id_groupe;
 		 	if (guid == uid && puid == pid) {
 		 		arrOfGID.push(gid);
